@@ -1,9 +1,16 @@
 [[plugins]]
   package = "netlify-plugin-cypress"
-  # let's run tests against development server
-  # before building it (and testing the built site)
-  [plugins.inputs.preBuild]
+  # Lancer les tests avant le deploiement. Si les tests echouent, rien n'est deployer
+  # avantage: Cela empeche de mettre des codes non fonctionnels en prod 
+  [plugins.inputs.preBuild] # Executer avant le build
     enable = true
     start = 'quasar dev'
     wait-on = 'http://localhost:8080'
     wait-on-timeout = '30' # seconds
+
+  # Lance les tests sur l'application deployer
+  # inconvenient: Meme si les tests echouent, les codes sont deja deploye
+  # avantage: s'assurer que la mise en prod est ok
+  # Executer si le deploiement est un succes
+  # [[plugins]]
+  # package = "netlify-plugin-cypress"
