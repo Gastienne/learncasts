@@ -99,7 +99,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ["Meta"]
     },
 
     // animations: 'all', // --- includes all animations
@@ -141,8 +141,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Quasar App',
-        short_name: 'Quasar App',
+        name: 'Learncasts',
+        short_name: 'Learncasts',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
