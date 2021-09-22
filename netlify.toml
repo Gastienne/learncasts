@@ -1,0 +1,9 @@
+[[plugins]]
+  package = "netlify-plugin-cypress"
+  # let's run tests against development server
+  # before building it (and testing the built site)
+  [plugins.inputs.preBuild]
+    enable = true
+    start = 'quasar dev'
+    wait-on = 'http://localhost:8080'
+    wait-on-timeout = '30' # seconds
