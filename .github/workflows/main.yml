@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      # and run all Cypress tests and Jest tests
       - name: Setup node 14
         uses: actions/setup-node@v2
         with:
