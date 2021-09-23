@@ -1,5 +1,6 @@
 [[plugins]]
   package = "netlify-plugin-cypress"
+  package = "@uwhealth/netlify-plugin-jest"
   # Lancer les tests avant le deploiement. Si les tests echouent, rien n'est deployer
   # avantage: Cela empeche de mettre des codes non fonctionnels en prod 
   [plugins.inputs.preBuild] # Executer avant le build
