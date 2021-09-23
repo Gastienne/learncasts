@@ -13,15 +13,15 @@
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/CompositionComponent.vue';
 import { defineComponent, ref } from 'vue';
-import { useMeta } from 'quasar';
+// import { useMeta } from 'quasar';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { ExampleComponent },
-  setup() {
-    useMeta({
-      title: 'Learncasts'
-    })
+  // components: { ExampleComponent },
+  // setup() {
+  //   useMeta({
+  //     title: 'Learncasts'
+  //   })
     const todos = ref<Todo[]>([
       {
         id: 1,
