@@ -15,6 +15,6 @@
   # [[plugins]]
   # package = "netlify-plugin-cypress"
   [[plugins]]
-  package = "@uwhealth/netlify-plugin-jest"
-  [plugins.inputs]
-  extraLogging = true
+    package = "@uwhealth/netlify-plugin-jest"
+    [plugins.inputs]
+    extraLogging = true
