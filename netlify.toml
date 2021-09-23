@@ -14,7 +14,6 @@
   # Executer si le deploiement est un succes
   # [[plugins]]
   # package = "netlify-plugin-cypress"
-  [[plugins]]
+[[plugins]]
   package = "@uwhealth/netlify-plugin-jest"
-  [plugins.inputs]
-  extraLogging = true
+  
