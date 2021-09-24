@@ -2,7 +2,7 @@ name: E2E and unit tests
 on:
   pull_request:
     branches:
-    - master
+    -'!master'
 jobs:
   tests:
     runs-on: ubuntu-20.04
@@ -16,5 +16,11 @@ jobs:
         with:
           node-version: 14.x
       - run: yarn install
-      - run: yarn test:unit:ci
-      - run: yarn test:e2e:ci
+      - name: Deploy to netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=build --prod
+          secrets: '["DEV_NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
