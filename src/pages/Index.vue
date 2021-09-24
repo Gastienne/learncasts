@@ -20,7 +20,7 @@ export default defineComponent({
   components: { ExampleComponent },
   setup() {
     useMeta({
-      title: 'Learncasts'
+      title: 'Title'
     })
     const todos = ref<Todo[]>([
       {
