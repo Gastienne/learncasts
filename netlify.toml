@@ -1,4 +1,8 @@
 [[plugins]]
+  # runs QA Wolf tests against the deployed URL
+  package = "netlify-plugin-qawolf"
+  
+[[plugins]]
   package = "netlify-plugin-cypress"
   # Lancer les tests avant le deploiement. Si les tests echouent, rien n'est deployer
   # avantage: Cela empeche de mettre des codes non fonctionnels en prod 
