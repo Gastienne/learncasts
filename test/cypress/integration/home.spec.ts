@@ -7,7 +7,7 @@
 describe('Landing', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.testRoute('/home')
+    cy.testRoute('/')
   });
   it('.should() - assert that <title> is correct', () => {
     cy.title().should('include', 'Learncasts');
