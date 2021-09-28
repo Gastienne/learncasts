@@ -21,10 +21,13 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
+    "netlify-plugin-cypress-sowellapp": "0.0.1",
+    "node-fetch": "^3.0.0",
     "quasar": "^2.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
+    "@netlify/functions": "^0.7.2",
     "@quasar/app": "^3.0.0",
     "@quasar/quasar-app-extension-testing-e2e-cypress": "^4.0.0-beta.4",
     "@quasar/quasar-app-extension-testing-unit-jest": "^3.0.0-alpha.3",
@@ -36,8 +39,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-vue": "^7.0.0",
-    "netlify-plugin-cypress": "^2.2.0"
+    "eslint-plugin-vue": "^7.0.0"
   },
   "browserslist": [
     "last 10 Chrome versions",
