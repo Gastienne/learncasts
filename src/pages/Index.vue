@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/CompositionComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 import { useMeta } from 'quasar';
 
 export default defineComponent({
@@ -21,6 +21,9 @@ export default defineComponent({
   setup() {
     useMeta({
       title: 'Learncasts'
+    })
+    onMounted(() => {
+      // fetch('/.netlify/functions/deploy-succeeded')
     })
     const todos = ref<Todo[]>([
       {

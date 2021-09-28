@@ -1,6 +1,4 @@
-import { Handler } from '@netlify/functions';
-
-const handler: Handler = () => {
+exports.handler = () => {
   console.log(process.env)
 
   return {
@@ -8,5 +6,3 @@ const handler: Handler = () => {
     body: JSON.stringify({ message: 'Hello World' }),
   };
 };
-
-export { handler };
