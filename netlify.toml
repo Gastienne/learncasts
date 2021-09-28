@@ -1,7 +1,7 @@
 [[plugins]]
   package = "netlify-plugin-cypress"
   # Lancer les tests avant le deploiement. Si les tests echouent, rien n'est deployer
-  # avantage: Cela empeche de mettre des codes non fonctionnels en prod 
+  # avantage: Cela empeche de mettre des codes non fonctionnels en prod
   [plugins.inputs.preBuild] # Executer avant le build
     enable = true
     start = 'quasar dev'
@@ -13,7 +13,8 @@
   # avantage: s'assurer que la mise en prod est ok
   # Executer si le deploiement est un succes
   # [[plugins]]
-  # package = "netlify-plugin-cypress"
+  # package = "netlify-plugin-cypress-sowellapp"
 [[plugins]]
   package = "@uwhealth/netlify-plugin-jest"
-  
+[dev]
+  functions = "netlify/functions"
