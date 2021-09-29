@@ -1,20 +1,9 @@
+const axios = require('axios')
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
 const idPR = process.env.REVIEW_ID
 const branch = process.env.HEAD
 const repo = process.env.REPOSITORY_URL
-
-async function postData(url = '', data = {}) {
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
-  return response.json();
-}
-
 
 function sendDeployStatus(isSuccess = false) {
   const url = `https://app.netlify.com/sites/${siteName}/deploys/${deployId}`
@@ -26,7 +15,7 @@ function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  postData('/api/urlDeployPreview', data)
+  axios.post('/api/urlDeployPreview', data)
   .then(function (response) {
     console.log(response)
   })
