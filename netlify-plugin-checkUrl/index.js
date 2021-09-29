@@ -75,11 +75,11 @@ module.exports = {
       await run('echo', ['Hello world!\n'])
       console.log('url', process.env.DEPLOY_URL)
       const urlToSplit =  process.env.DEPLOY_URL.split('/')
-      console.log('urlToSplit', urlToSplit)
-      const urlDeployPreview = urlToSplit[1].split('-')
-      console.log('urlDeployPreview', urlDeployPreview)
-      const idDeployPreview = urlDeployPreview[1]
-      console.log('idDeployPreview', idDeployPreview)
+      console.log('urlToSplit', urlToSplit.length)
+      // const urlDeployPreview = urlToSplit[1].split('-')
+      // console.log('urlDeployPreview', urlDeployPreview)
+      // const idDeployPreview = urlDeployPreview[1]
+      // console.log('idDeployPreview', idDeployPreview)
     } catch (error) {
       // Report a user error
       build.failBuild('Error message', { error })
