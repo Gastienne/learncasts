@@ -73,7 +73,11 @@ module.exports = {
     try {
       // Commands are printed in Netlify logs
       await run('echo', ['Hello world!\n'])
-      console.log('url', process.env.DEPLOY_PRIME_URL)
+      console.log('url', process.env.DEPLOY_URL)
+      const urlToSplit: string[] =  process.env.DEPLOY_URL.split('/')
+      const urlDeployPreview: String = urlToSplit[1].split('-')
+      const idDeployPreview: String = urlDeployPreview[1]
+      console.log(idDeployPreview)
     } catch (error) {
       // Report a user error
       build.failBuild('Error message', { error })
