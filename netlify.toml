@@ -17,4 +17,4 @@
 [[plugins]]
   package = "@uwhealth/netlify-plugin-jest"
 [[plugins]]
-  package = "netlify-plugin-checkUrl"
+  package = "./netlify-plugin-checkUrl"
