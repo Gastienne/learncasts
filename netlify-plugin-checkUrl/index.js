@@ -2,6 +2,16 @@
 // Please read the comments to learn more about the Netlify Build plugin syntax.
 // Find more information in the Netlify documentation.
 
+function splitUrl(processEnv) {
+  const urlToSplit =  processEnv.DEPLOY_URL.split('/')
+  const urlDeployPreview = urlToSplit[2].split('-')
+  const idDeployPreview = urlDeployPreview[0]
+  return {
+    'siteName': processEnv.SITE_NAME,
+    'idDeployPreview': idDeployPreview
+  }
+}
+
 /* eslint-disable no-unused-vars */
 module.exports = {
   // The plugin main logic uses `on...` event handlers that are triggered on
@@ -73,14 +83,13 @@ module.exports = {
     try {
       // Commands are printed in Netlify logs
       await run('echo', ['Hello world!\n'])
-      console.log('url', process.env)
-      const urlToSplit =  process.env.DEPLOY_URL.split('/')
-      const urlDeployPreview = urlToSplit[2].split('-')
-      const idDeployPreview = urlDeployPreview[0]
-      const url = `https://app.netlify.com/sites/${process.env.SITE_NAME}/deploys/${idDeployPreview}`
+      const deployData = splitUrl(process.env)
+      const url = `https://app.netlify.com/sites/${deployData.siteName}/deploys/${deployData.idDeployPreview}`
       console.log('url deploy', url)
     } catch (error) {
       // Report a user error
+      const deployData = splitUrl(process.env)
+      const url = `https://app.netlify.com/sites/${deployData.siteName}/deploys/${deployData.idDeployPreview}`
       build.failBuild('Error message', { error })
     }
 
