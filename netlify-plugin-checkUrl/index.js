@@ -84,6 +84,7 @@ module.exports = {
       // Commands are printed in Netlify logs
       await run('echo', ['Hello world!\n'])
       const deployData = splitUrl(process.env)
+      console.log('deploy data', deployData)
       const url = `https://app.netlify.com/sites/${deployData.siteName}/deploys/${deployData.idDeployPreview}`
       console.log('url deploy', url)
     } catch (error) {
