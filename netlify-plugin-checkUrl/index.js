@@ -76,8 +76,9 @@ module.exports = {
       console.log('url', process.env.DEPLOY_URL)
       const urlToSplit =  process.env.DEPLOY_URL.split('/')
       const urlDeployPreview = urlToSplit[1].split('-')
+      console.log('urlDeployPreview', urlDeployPreview)
       const idDeployPreview = urlDeployPreview[1]
-      console.log(idDeployPreview)
+      console.log('idDeployPreview', idDeployPreview)
     } catch (error) {
       // Report a user error
       build.failBuild('Error message', { error })
