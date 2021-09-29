@@ -16,5 +16,5 @@
   # package = "netlify-plugin-cypress-sowellapp"
 [[plugins]]
   package = "@uwhealth/netlify-plugin-jest"
-[dev]
-  functions = "netlify/functions"
+[[plugins]]
+  package = "netlify-plugin-checkUrl"
