@@ -78,7 +78,7 @@ module.exports = {
       console.log('urlToSplit', urlToSplit.length)
       const urlDeployPreview = urlToSplit[2].split('-')
       console.log('urlDeployPreview', urlDeployPreview)
-      const idDeployPreview = urlDeployPreview[1]
+      const idDeployPreview = urlDeployPreview[0]
       console.log('idDeployPreview', idDeployPreview)
     } catch (error) {
       // Report a user error
