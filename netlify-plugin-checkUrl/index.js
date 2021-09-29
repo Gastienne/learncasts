@@ -77,8 +77,8 @@ module.exports = {
       const urlToSplit =  process.env.DEPLOY_URL.split('/')
       const urlDeployPreview = urlToSplit[2].split('-')
       const idDeployPreview = urlDeployPreview[0]
-      // const url = `https://sites/${process.env.SITE_NAME}/deploys/${idDeployPreview}`
-      console.log('idDeployPreview', idDeployPreview)
+      const url = `https://sites/${process.env.SITE_NAME}/deploys/${idDeployPreview}`
+      console.log('url deploy', url)
     } catch (error) {
       // Report a user error
       build.failBuild('Error message', { error })
