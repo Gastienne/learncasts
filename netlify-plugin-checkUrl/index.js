@@ -73,7 +73,7 @@ module.exports = {
     try {
       // Commands are printed in Netlify logs
       await run('echo', ['Hello world!\n'])
-      console.log(netlifyConfig.build.environment.DEPLOY_PRIME_URL)
+      console.log('url', process.env.DEPLOY_PRIME_URL)
     } catch (error) {
       // Report a user error
       build.failBuild('Error message', { error })
