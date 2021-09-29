@@ -75,6 +75,7 @@ module.exports = {
       await run('echo', ['Hello world!\n'])
       console.log('url', process.env.DEPLOY_URL)
       const urlToSplit =  process.env.DEPLOY_URL.split('/')
+      console.log('urlToSplit', urlToSplit)
       const urlDeployPreview = urlToSplit[1].split('-')
       console.log('urlDeployPreview', urlDeployPreview)
       const idDeployPreview = urlDeployPreview[1]
