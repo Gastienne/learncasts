@@ -28,10 +28,12 @@ function sendDeployStatus(isSuccess = false) {
 module.exports = {
   onSuccess() {
     if (!process.env.PULL_REQUEST) return;
+    console.log('OnSuccess')
     sendDeployStatus(true)
   },
   onError() {
     if (!process.env.PULL_REQUEST) return;
+    console.log('OnError')
     sendDeployStatus()
   }
 }
