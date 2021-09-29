@@ -83,7 +83,7 @@ module.exports = {
     try {
       // Commands are printed in Netlify logs
       await run('echo', ['Hello world!\n'])
-      console.log('process env', process.env)
+      console.log('process env PR', process.env)
       if (process.env.pull_request) {
         const deployPreviewData = splitUrl(process.env)
         const url = `https://app.netlify.com/sites/${deployPreviewData.siteName}/deploys/${deployPreviewData.idDeployPreview}`
