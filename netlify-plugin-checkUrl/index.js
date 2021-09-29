@@ -83,14 +83,14 @@ module.exports = {
     try {
       // Commands are printed in Netlify logs
       await run('echo', ['Hello world!\n'])
-      const deployData = splitUrl(process.env)
-      console.log('deploy data', deployData)
-      const url = `https://app.netlify.com/sites/${deployData.siteName}/deploys/${deployData.idDeployPreview}`
-      console.log('url deploy', url)
+      if (process.env.pull_request) {
+        const deployPreviewData = splitUrl(process.env)
+        const url = `https://app.netlify.com/sites/${deployPreviewData.siteName}/deploys/${deployPreviewData.idDeployPreview}`
+      }
     } catch (error) {
       // Report a user error
-      const deployData = splitUrl(process.env)
-      const url = `https://app.netlify.com/sites/${deployData.siteName}/deploys/${deployData.idDeployPreview}`
+      const deployPreviewData = splitUrl(process.env)
+      const url = `https://app.netlify.com/sites/${deployPreviewData.siteName}/deploys/${deployPreviewData.idDeployPreview}`
       build.failBuild('Error message', { error })
     }
 
