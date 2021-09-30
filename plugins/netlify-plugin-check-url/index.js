@@ -1,4 +1,5 @@
 // const axios = require('axios');
+import axios from 'axios'
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
 const idPR = process.env.REVIEW_ID
@@ -18,18 +19,17 @@ function sendDeployStatus(isSuccess = false) {
   //   'repo': repo
   // }
 
-  // const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
-  // // axios({
-  // //   method: 'POST',
-  // //   apiUrl,
-  // //   data
-  // // })
-  // // .then(function (response) {
-  // //   console.log('ok', response)
-  // // })
-  // // .catch(function (error) {
-  // //   console.log('error', error)
-  // // })
+  const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
+  axios.get(apiUrl)
+  .then(function (response) {
+    // handle success
+    console.log(' ##################### log ###########', response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(' ##################### log ###########', error);
+  })
 
 }
 /* eslint-disable no-unused-vars */
