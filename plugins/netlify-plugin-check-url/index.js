@@ -1,10 +1,11 @@
-import fetch from 'node-fetch'
+const fetch = import('node-fetch')
+// import fetch from 'node-fetch';
 
-const siteName = process.env.SITE_NAME
-const deployId = process.env.DEPLOY_ID
-const idPR = process.env.REVIEW_ID
-const branch = process.env.HEAD
-const repo = process.env.REPOSITORY_URL
+// const siteName = process.env.SITE_NAME
+// const deployId = process.env.DEPLOY_ID
+// const idPR = process.env.REVIEW_ID
+// const branch = process.env.HEAD
+// const repo = process.env.REPOSITORY_URL
 
 function sendDeployStatus(isSuccess = false) {
   console.log('VOAHANTSO')
@@ -31,16 +32,18 @@ function sendDeployStatus(isSuccess = false) {
 
 }
 /* eslint-disable no-unused-vars */
-export function onSuccess() {
-  if (!process.env.PULL_REQUEST)
-    return;
-  console.log('OnSuccess');
-  sendDeployStatus(true);
-  console.log('eto ambany');
-}
-export function onError() {
-  if (!process.env.PULL_REQUEST)
-    return;
-  console.log('OnError');
-  sendDeployStatus();
+module.exports = {
+  onSuccess: (() => {
+    if (!process.env.PULL_REQUEST)
+      return;
+    console.log('OnSuccess');
+    sendDeployStatus(true);
+    console.log('eto ambany');
+  }),
+  onError: (() => {
+    if (!process.env.PULL_REQUEST)
+      return;
+    console.log('OnError');
+    sendDeployStatus();
+  })
 }
