@@ -13,7 +13,7 @@ module.exports = {
     if (!process.env.PULL_REQUEST){
       return;
     }
-    const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
+    const apiUrl = 'https://api.my-ip.io/ip.json'
       axios({
         method: 'get',
         url: apiUrl,
@@ -27,7 +27,6 @@ module.exports = {
         console.log(' ##################### log ###########', error);
       })
     console.log('OnSuccess');
-    sendDeployStatus(true);
     console.log('eto ambany');
   }),
   onError: (() => {
