@@ -1,5 +1,5 @@
 // const axios = require('axios');
-import 'whatwg-fetch'
+require('whatwg-fetch')
 
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
