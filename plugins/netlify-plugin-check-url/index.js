@@ -1,4 +1,4 @@
-const fetch = import('node-fetch')
+const axios = import('axios')
 // import fetch from 'node-fetch';
 
 // const siteName = process.env.SITE_NAME
@@ -19,9 +19,12 @@ function sendDeployStatus(isSuccess = false) {
   // }
 
   const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  fetch(apiUrl)
-  .then(function (response) {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  axios({
+    method: 'get',
+    url: apiUrl,
+    responseType: 'stream'
+  }).then(function (response) {
     // handle success
     console.log(' ##################### log ###########', response);
   })
