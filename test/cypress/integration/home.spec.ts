@@ -10,7 +10,7 @@ describe('Landing', () => {
     cy.testRoute('/')
   });
   it('.should() - assert that <title> is correct', () => {
-    cy.title().should('include', 'Test');
+    cy.title().should('include', 'Learncasts');
   });
 });
 
