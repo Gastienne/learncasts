@@ -10,6 +10,7 @@ const axios = require('axios')
 /* eslint-disable no-unused-vars */
 module.exports = {
   onSuccess: (() => {
+    console.log('OnSuccess');
     if (!process.env.PULL_REQUEST){
       return;
     }
@@ -26,7 +27,6 @@ module.exports = {
         // handle error
         console.log(' ##################### log ###########', error);
       })
-    console.log('OnSuccess');
     console.log('eto ambany');
   }),
   onError: (() => {
