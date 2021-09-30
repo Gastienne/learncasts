@@ -39,7 +39,7 @@ function sendDeployStatus(isSuccess = false) {
   .then(function () {
     // always executed
   });
-
+}
 /* eslint-disable no-unused-vars */
 module.exports = {
   onSuccess() {
