@@ -15,7 +15,7 @@ async function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  await axios.post('/api/urlDeployPreview', data)
+  await axios.get('https://api.my-ip.io/ip.json')
   .then(function (response) {
     console.log(response)
   })
@@ -26,14 +26,16 @@ async function sendDeployStatus(isSuccess = false) {
 
 /* eslint-disable no-unused-vars */
 module.exports = {
-  onSuccess() {
+  onSuccess:  async () => {
     if (!process.env.PULL_REQUEST) return;
     console.log('OnSuccess')
-    sendDeployStatus(true)
+    await sendDeployStatus(true)
+    console.log('fin axios')
+
   },
-  onError() {
+  onError : async () => {
     if (!process.env.PULL_REQUEST) return;
     console.log('OnError')
-    sendDeployStatus()
+    await sendDeployStatus()
   }
 }
