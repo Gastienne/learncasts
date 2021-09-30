@@ -1,4 +1,6 @@
-const axios = require('axios')
+// const axios = require('axios')
+import axios from 'axios';
+
 // import fetch from 'node-fetch';
 
 // const siteName = process.env.SITE_NAME
@@ -18,7 +20,7 @@ function sendDeployStatus(isSuccess = false) {
   //   'repo': repo
   // }
 
-  const apiUrl = 'https://api.my-ip.io/ip.json'
+  const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   axios({
     method: 'get',
