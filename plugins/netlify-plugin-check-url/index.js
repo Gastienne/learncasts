@@ -15,16 +15,26 @@ function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/netlify'
+  const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
+  // axios({
+  //   method: 'POST',
+  //   apiUrl,
+  //   data
+  // })
+  // .then(function (response) {
+  //   console.log('ok', response)
+  // })
+  // .catch(function (error) {
+  //   console.log('error', error)
+  // })
   axios({
-    method: 'POST',
-    apiUrl,
-    data
+    method: 'GET',
+    apiUrl
   })
-  .then(function (response) {
-    console.log('ok', response)
+  .then((response) => {
+    console.log('test', response)
   })
-  .catch(function (error) {
+  .catch((error) => {
     console.log('error', error)
   })
 }
