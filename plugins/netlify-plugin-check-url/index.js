@@ -15,7 +15,7 @@ async function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  const apiUrl = 'https://poc-gestion-projet-99ce21.netlify.live/.netlify/functions/netlify'
+  const apiUrl = 'https://poc-gestion-projet-201cf7.netlify.live/.netlify/functions/netlify'
   await axios.post(apiUrl)
   .then(function (response) {
     console.log('response ok', response)
