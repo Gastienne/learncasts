@@ -15,12 +15,13 @@ async function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  await axios.get('https://api.my-ip.io/ip.json')
+  const apiUrl = 'https://poc-gestion-projet-99ce21.netlify.live/.netlify/functions/netlify'
+  await axios.post(apiUrl)
   .then(function (response) {
-    console.log(response)
+    console.log('response ok', response)
   })
   .catch(function (error) {
-    console.log(error)
+    console.log('error', error)
   })
 }
 
@@ -31,7 +32,6 @@ module.exports = {
     console.log('OnSuccess')
     await sendDeployStatus(true)
     console.log('fin axios')
-
   },
   onError : async () => {
     if (!process.env.PULL_REQUEST) return;
