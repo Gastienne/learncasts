@@ -15,7 +15,7 @@ function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  axios.post('/api/urlDeployPreview', data)
+  axios.post('https://poc-gestion-projet-db9a07.netlify.live', data)
   .then(function (response) {
     console.log(response)
   })
