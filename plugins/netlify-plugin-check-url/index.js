@@ -8,8 +8,6 @@ const repo = process.env.REPOSITORY_URL
 
 function sendDeployStatus(isSuccess = false) {
   console.log('VOAHANTSO')
-  fetch('https://api.my-ip.io/ip.json')
-  .then(resp =>  console.log('########## HITA BE ######### ', resp)).then(err => console.log('########### error ###########', err))
   // const url = `https://app.netlify.com/sites/${siteName}/deploys/${deployId}`
   // const data = {
   //   'onSuccess': isSuccess,
