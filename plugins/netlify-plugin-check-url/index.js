@@ -1,5 +1,5 @@
 // const axios = require('axios');
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
@@ -32,16 +32,16 @@ function sendDeployStatus(isSuccess = false) {
 
 }
 /* eslint-disable no-unused-vars */
-module.exports = {
-  onSuccess() {
-    if (!process.env.PULL_REQUEST) return;
-    console.log('OnSuccess')
-    sendDeployStatus(true)
-    console.log('eto ambany')
-  },
-  onError() {
-    if (!process.env.PULL_REQUEST) return;
-    console.log('OnError')
-    sendDeployStatus()
-  }
+export function onSuccess() {
+  if (!process.env.PULL_REQUEST)
+    return;
+  console.log('OnSuccess');
+  sendDeployStatus(true);
+  console.log('eto ambany');
+}
+export function onError() {
+  if (!process.env.PULL_REQUEST)
+    return;
+  console.log('OnError');
+  sendDeployStatus();
 }
