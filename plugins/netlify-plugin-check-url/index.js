@@ -1,4 +1,4 @@
-const axios = require('axios')
+const axios = require('axios');
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
 const idPR = process.env.REVIEW_ID
@@ -27,17 +27,18 @@ function sendDeployStatus(isSuccess = false) {
   // .catch(function (error) {
   //   console.log('error', error)
   // })
-  axios({
-    method: 'GET',
-    apiUrl
+  axios.get(apiUrl)
+  .then(function (response) {
+    // handle success
+    console.log(response);
   })
-  .then((response) => {
-    console.log('test', response)
+  .catch(function (error) {
+    // handle error
+    console.log(error);
   })
-  .catch((error) => {
-    console.log('error', error)
-  })
-}
+  .then(function () {
+    // always executed
+  });
 
 /* eslint-disable no-unused-vars */
 module.exports = {
