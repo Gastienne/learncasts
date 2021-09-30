@@ -1,5 +1,5 @@
-// const axios = require('axios');
-import fetch from 'node-fetch';
+const fetch = import('node-fetch');
+// import fetch from 'node-fetch';
 
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
