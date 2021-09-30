@@ -27,6 +27,7 @@
   "scripts": {},
   "type": "module",
   "dependencies": {
-    "axios": "^0.21.4"
+    "axios": "^0.21.4",
+    "whatwg-fetch": "^3.6.2"
   }
 }

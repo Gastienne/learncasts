@@ -1,5 +1,6 @@
 // const axios = require('axios');
-import axios from 'axios'
+import 'whatwg-fetch'
+
 const siteName = process.env.SITE_NAME
 const deployId = process.env.DEPLOY_ID
 const idPR = process.env.REVIEW_ID
@@ -19,7 +20,7 @@ function sendDeployStatus(isSuccess = false) {
 
   const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  axios.get(apiUrl)
+  fetch(apiUrl)
   .then(function (response) {
     // handle success
     console.log(' ##################### log ###########', response);
