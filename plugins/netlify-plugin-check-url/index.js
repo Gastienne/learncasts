@@ -18,10 +18,10 @@ function sendDeployStatus(isSuccess = false) {
   const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/netlify'
   axios.post(apiUrl, data)
   .then(function (response) {
-    console.log(response)
+    console.log('ok', response)
   })
   .catch(function (error) {
-    console.log(error)
+    console.log('error', error)
   })
 }
 
