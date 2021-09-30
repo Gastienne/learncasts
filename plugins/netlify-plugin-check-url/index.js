@@ -18,7 +18,7 @@ function sendDeployStatus(isSuccess = false) {
   //   'repo': repo
   // }
 
-  const apiUrl = 'https://poc-gestion-projet-db9a07.netlify.live/.netlify/functions/hello'
+  const apiUrl = 'https://api.my-ip.io/ip.json'
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   axios({
     method: 'get',
