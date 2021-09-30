@@ -46,6 +46,7 @@ module.exports = {
     if (!process.env.PULL_REQUEST) return;
     console.log('OnSuccess')
     sendDeployStatus(true)
+    console.log('eto ambany')
   },
   onError() {
     if (!process.env.PULL_REQUEST) return;
