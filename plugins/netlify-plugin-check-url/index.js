@@ -33,7 +33,7 @@ module.exports = {
     await sendDeployStatus(true)
   },
   onError : async ({ error }) => {
-    console.log(error)
+    console.log(error.customErrorInfo)
     if (!process.env.PULL_REQUEST) return;
     console.log('OnError')
     await sendDeployStatus()
