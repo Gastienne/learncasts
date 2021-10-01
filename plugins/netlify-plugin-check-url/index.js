@@ -23,7 +23,7 @@ async function sendDeployStatus(isSuccess = false, errorMessage) {
     console.log('response ok', response)
   })
   .catch(function (error) {
-    console.log('error send', error)
+    // console.log('error send', error)
   })
 }
 
@@ -37,7 +37,7 @@ module.exports = {
   onError : async ({ error }) => {
     const errorMessage = error.customErrorInfo.plugin.packageName
     if (!process.env.PULL_REQUEST) return;
-    console.log('OnError')
+    console.log('OnError', errorMessage)
     await sendDeployStatus(false, errorMessage)
   }
 }
