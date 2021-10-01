@@ -17,8 +17,8 @@ async function sendDeployStatus(isSuccess = false, errorMessage) {
     'errorMessage': error
   }
 
-  const apiUrl = 'https://poc-gestion-projet-7f97a8.netlify.live/.netlify/functions/netlify'
-  await axios.post(apiUrl, data)
+  // const apiUrl = 'https://poc-gestion-projet-7f97a8.netlify.live/.netlify/functions/netlify'
+  await axios.post('https://reqres.in', data)
   .then(function (response) {
     console.log('response ok', response)
   })
@@ -36,9 +36,9 @@ module.exports = {
   },
   onError : async ({ error }) => {
     console.log('failed', error)
-    const errorMessage = error.customErrorInfo.plugin.packageName
-    if (!process.env.PULL_REQUEST) return;
-    console.log('OnError')
-    await sendDeployStatus(false, errorMessage)
+    // const errorMessage = error.customErrorInfo.plugin.packageName
+    // if (!process.env.PULL_REQUEST) return;
+    // console.log('OnError')
+    // await sendDeployStatus(false, errorMessage)
   }
 }
