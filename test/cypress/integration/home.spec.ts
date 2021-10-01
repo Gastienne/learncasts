@@ -12,6 +12,9 @@ describe('Landing', () => {
   it('.should() - assert that <title> is correct', () => {
     cy.title().should('include', 'sdsfsfdg');
   });
+  it('should return error', () => {
+    cy.contains('tsara')
+  })
 });
 
 // ** The following code is an example to show you how to write some tests for your home page **
