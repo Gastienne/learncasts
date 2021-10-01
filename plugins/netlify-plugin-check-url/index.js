@@ -23,7 +23,7 @@ async function sendDeployStatus(isSuccess = false, errorMessage) {
     console.log('response ok', response)
   })
   .catch(function (error) {
-    console.log('error', error)
+    console.log('error callback', error)
   })
 }
 
