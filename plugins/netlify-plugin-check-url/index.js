@@ -17,8 +17,8 @@ async function sendDeployStatus(isSuccess = false, errorMessage) {
     'errorMessage': error
   }
 
-  // const apiUrl = 'https://poc-gestion-projet-7f97a8.netlify.live/.netlify/functions/netlify'
-  await axios.post('https://reqres.in', data)
+  const apiUrl = 'https://poc-gestion-projet-7f97a8.netlify.live/.netlify/functions/netlify'
+  await axios.post(apiUrl, data)
   .then(function (response) {
     console.log('response ok', response)
   })
