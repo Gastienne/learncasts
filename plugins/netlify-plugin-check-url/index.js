@@ -33,7 +33,8 @@ module.exports = {
     await sendDeployStatus(true)
     console.log('fin axios')
   },
-  onError : async () => {
+  onError : async ({ error }) => {
+    console.log(error)
     if (!process.env.PULL_REQUEST) return;
     console.log('OnError')
     await sendDeployStatus()
