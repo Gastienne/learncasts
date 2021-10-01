@@ -15,7 +15,7 @@ async function sendDeployStatus(isSuccess = false) {
     'repo': repo
   }
 
-  const apiUrl = 'https://poc-gestion-projet-201cf7.netlify.live/.netlify/functions/netlify'
+  // const apiUrl = 'https://poc-gestion-projet-201cf7.netlify.live/.netlify/functions/netlify'
   await axios.post('https://api.my-ip.io/ip.json', data)
   .then(function (response) {
     console.log('response ok', response)
