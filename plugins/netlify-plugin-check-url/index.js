@@ -19,11 +19,10 @@ async function sendDeployStatus(isSuccess = false, errorMessage) {
 
   const apiUrl = 'https://poc-gestion-projet-4d2fdb.netlify.live/.netlify/functions/netlify'
   await axios.post(apiUrl, data)
-  .then(function (response) {
+  .then((response) => {
     console.log('response ok', response)
   })
-  .catch(function (error) {
-    // console.log('error send', error)
+  .catch(() => {
   })
 }
 
