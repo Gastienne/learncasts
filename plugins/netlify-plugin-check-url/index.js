@@ -31,7 +31,8 @@ module.exports = {
   onSuccess:  async () => {
     if (!process.env.PULL_REQUEST) return;
     console.log('OnSuccess')
-    await sendDeployStatus(true)
+    console.log(process.env)
+    // await sendDeployStatus(true)
   },
   onError : async ({ error }) => {
     const errorMessage = error.customErrorInfo.plugin.packageName
