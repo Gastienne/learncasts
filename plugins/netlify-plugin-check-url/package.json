@@ -1,0 +1,31 @@
+{
+  "name": "netlify-plugin-check-url",
+  "version": "0.0.1",
+  "description": "Netlify Build plugin",
+  "main": "index.js",
+  "files": [
+    "src/**/*.js",
+    "src/**/*.json",
+    "src/**/*.sh",
+    "src/**/*.html",
+    "src/**/*.ejs",
+    "manifest.yml"
+  ],
+  "keywords": [
+    "netlify-plugin",
+    "netlify"
+  ],
+  "author": "Lea <leamanantsoa.dev@gmail.com>",
+  "license": "MIT",
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=12.18.0"
+  },
+  "scripts": {},
+  "dependencies": {
+    "axios": "^0.21.4"
+  }
+}

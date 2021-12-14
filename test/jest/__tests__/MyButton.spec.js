@@ -29,7 +29,7 @@ describe('MyButton', () => {
     const { vm } = wrapper;
 
     expect(typeof vm.counter).toBe('number');
-    expect(vm.counter).toBe(0);
+    expect(vm.counter).toBe(1);
   });
 
   it('correctly updates counter when button is pressed', async () => {
